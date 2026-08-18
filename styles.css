@@ -1,9 +1,9 @@
 /* === IDAN FRANCO — Personal site === */
-/* Aesthetic: Chagai Weiss-inspired. Newsreader body, Inter for the name, centered layout. */
+/* Aesthetic: Chagai Weiss-inspired. Newsreader body, Inter for the name. */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400&display=swap');
 
-/* === Enable cross-document View Transitions for seamless page navigation === */
+/* === Cross-document view transitions for seamless nav === */
 @view-transition {
   navigation: auto;
 }
@@ -18,7 +18,6 @@
   --color-border: #e5e5e5;
   --color-link: #1a3a8f;
   --color-link-hover: #4a6ac0;
-  /* Layout variables */
   --left-col-width: min(580px, calc((100vh - 9rem) * 2 / 3));
   --left-col-gap: 40px;
   --right-col-width: 620px;
@@ -32,11 +31,11 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
-/* === Navbar: centered items, subtle gray background === */
+/* === Navbar (desktop) === */
 .navbar {
   border-bottom: 1px solid var(--color-border) !important;
   padding-top: 1rem !important;
@@ -49,7 +48,6 @@ body {
   display: none !important;
 }
 
-/* Center the navbar's inner container */
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-xxl,
@@ -60,7 +58,6 @@ body {
   justify-content: center !important;
 }
 
-/* Center the nav items themselves */
 .navbar-collapse {
   flex-grow: 0 !important;
   justify-content: center !important;
@@ -95,7 +92,7 @@ body {
   display: none !important;
 }
 
-/* Hide any auto-generated title block */
+/* Hide auto-generated title block (desktop default) */
 #title-block-header,
 header.quarto-title-block,
 .quarto-title-block {
@@ -144,12 +141,11 @@ a:hover {
   color: var(--color-link-hover);
 }
 
-/* === HERO LEFT: fixed panel, centered on page === */
+/* === HERO LEFT: fixed panel on desktop === */
 .hero-left {
   position: fixed !important;
   top: 5rem !important;
   width: var(--left-col-width) !important;
-  /* Position hero at left edge of centered content total */
   left: max(2rem, calc((100vw - var(--content-total)) / 2)) !important;
   z-index: 5 !important;
   display: flex !important;
@@ -181,7 +177,7 @@ a:hover {
   width: 100% !important;
   height: auto !important;
   display: block !important;
-  border-radius: 8px !important;
+  border-radius: 2px !important;
   margin: 0 auto !important;
 }
 
@@ -195,10 +191,9 @@ a:hover {
   mix-blend-mode: normal;
 }
 
-/* === MAIN CONTENT: centered within the 1240px body-width container === */
+/* === MAIN CONTENT === */
 main.content,
 main#quarto-document-content {
-  /* margin-left = extra centering space + left column + gap */
   margin-left: calc((var(--body-width) - var(--content-total)) / 2 + var(--left-col-width) + var(--left-col-gap)) !important;
   max-width: var(--right-col-width) !important;
   padding-top: 0.5rem;
@@ -267,18 +262,9 @@ main#quarto-document-content > p:first-of-type {
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Don't put a trailing border under the last item in a list */
 .publication:last-of-type,
 .paper:last-of-type {
   border-bottom: none;
-}
-
-/* === Book cover image === */
-.book-cover {
-  display: block;
-  margin: 1.5rem auto;
-  max-width: 100%;
-  height: auto;
 }
 
 .publication-title {
@@ -308,6 +294,14 @@ main#quarto-document-content > p:first-of-type {
   margin-right: 1rem;
 }
 
+/* === Book cover image === */
+.book-cover {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
 /* === Footer: completely hidden === */
 .nav-footer,
 .page-footer,
@@ -315,8 +309,12 @@ footer.footer {
   display: none !important;
 }
 
-/* === Responsive: mobile stacks vertically === */
+/* ============================================================ */
+/* === MOBILE (≤ 900px viewport width) ===                      */
+/* ============================================================ */
 @media (max-width: 900px) {
+
+  /* Hero panel becomes normal-flow (not fixed) */
   .hero-left {
     position: static !important;
     width: 100% !important;
@@ -335,7 +333,72 @@ footer.footer {
     font-size: 2.5rem !important;
   }
 
+  /* --- MOBILE NAV: force horizontal, no hamburger --- */
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto !important;
+    flex-grow: 0 !important;
+  }
+
+  .navbar-nav {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.25rem 0.5rem !important;
+    margin: 0 !important;
+  }
+
   .navbar-nav .nav-link {
-    margin: 0 0.75rem !important;
+    font-size: 0.85rem !important;
+    margin: 0 0.4rem !important;
+    padding: 0.15rem 0 !important;
+  }
+
+  /* --- MOBILE, NON-HOME PAGES: hide hero panel, show page title --- */
+
+  /* Hide the entire hero panel (name + photo) */
+  body.not-home .hero-left {
+    display: none !important;
+  }
+
+  /* Show Quarto's auto-generated title block */
+  body.not-home #title-block-header,
+  body.not-home header.quarto-title-block,
+  body.not-home .quarto-title-block {
+    display: block !important;
+    margin: 1.5rem 0 2rem 0 !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    text-align: center !important;
+  }
+
+  /* Style the section title */
+  body.not-home #title-block-header .title,
+  body.not-home header.quarto-title-block .title,
+  body.not-home .quarto-title-block .title,
+  body.not-home #title-block-header h1.title,
+  body.not-home header.quarto-title-block h1.title {
+    font-family: var(--font-name) !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--color-text) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    border: none !important;
+  }
+
+  /* Hide any subtitle or metadata Quarto adds */
+  body.not-home #title-block-header .subtitle,
+  body.not-home #title-block-header .quarto-title-meta,
+  body.not-home #title-block-header .quarto-title-authors,
+  body.not-home #title-block-header .date,
+  body.not-home #title-block-header .author {
+    display: none !important;
   }
 }
