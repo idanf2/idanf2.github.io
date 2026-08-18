@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Idan Franco"
+  description: "PhD Candidate in Political Science, University of Illinois Urbana-Champaign"
+  site-url: "https://www.idanfranco.com"
+  favicon: img/favicon.png
+  open-graph: true
+  twitter-card: true
+
+  navbar:
+    pinned: true
+    background: light
+    foreground: black
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Publications"
+        href: publications.qmd
+      - text: "The Emerging Republican Minorities"
+        href: book.qmd
+      - text: "Working Papers"
+        href: research.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    page-layout: article
+    fontsize: 1rem
+    linestretch: 1.6
+    include-in-header: _head.html
+    include-before-body: _hero-left.html
+    grid:
+      body-width: 1240px
+      sidebar-width: 0px
+      margin-width: 0px

@@ -1,0 +1,47 @@
+---
+title: "Teaching"
+page-layout: article
+toc: true
+toc-location: right
+toc-title: "On this page"
+---
+
+## Teaching Statement
+
+A short paragraph describing your teaching philosophy. Common themes: cultivating quantitative literacy, helping students engage with primary research, connecting methods to substantive questions, or making causal inference accessible. Replace with your own.
+
+## Courses Taught
+
+### As Instructor of Record
+
+**Course Title** &nbsp;·&nbsp; *Department, University, Semester Year*
+
+Short course description (1–2 sentences). Topics covered or learning objectives.
+
+[[Syllabus](#)]
+
+---
+
+**Course Title** &nbsp;·&nbsp; *Department, University, Semester Year*
+
+Short course description.
+
+[[Syllabus](#)]
+
+### As Teaching Assistant
+
+- **Course Title** — Professor Name, Department, University, Semester Year
+- **Course Title** — Professor Name, Department, University, Semester Year
+- **Course Title** — Professor Name, Department, University, Semester Year
+
+## Teaching Materials
+
+Selected slides, lab guides, and pedagogical resources I have developed:
+
+- [Causal Inference for Political Behavior — slide deck](#)
+- [Introduction to RDD/RDiT — Quarto/Beamer slides](#)
+- [DAGs for survey-experimental designs](#)
+
+## Mentoring
+
+If you are a student interested in working with me on causal inference, identity politics, or Latin American / Israeli political behavior, please [reach out](mailto:idanf2@illinois.edu).

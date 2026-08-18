@@ -1,0 +1,21 @@
+---
+title: ""
+page-layout: article
+toc: false
+---
+
+Welcome! I am a Ph.D. student in the [Department of Political Science](https://pol.illinois.edu/) at the [University of Illinois Urbana-Champaign](https://illinois.edu/), and the author of [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*]( https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/), published by [Bloomsbury Academic](https://www.bloomsbury.com/us/).
+
+Broadly, my research sits at the intersection of political behavior and public opinion, seeking to explain political phenomena that underlie our present and that will shape our future.
+
+My first strand of work revolves around “minorities within minorities,” i.e., members of minority groups—based on race, ethnicity, and migration, gender and sexual orientation, or ideology—who diverge from the majority of their groups. Because liberal democracies become increasingly more diverse, the political and social diversification occurring among minority groups become more important as well. This is particularly evident in the case of democratic backsliding, now supported and led by members of minority groups around the world in unprecedented numbers.
+
+In my second strand of work, I study public opinion in the international context. I am interested in why, how, and when individuals change their opinions and attitudes towards countries, leaders, and peoples, in response to major international events.
+
+Geographically, my works concentrate on the United States, Latin America, and the Middle East. I mainly use quantitative research methods, with an emphasis on causal inference techniques, but have also utilized qualitative methods, including elite and non-elite interviews. A recent methodological focus of mine is the integration of LLM classification in large-N content analysis.
+
+My works have been published in the *European Political Science Review*, *Groups, Politics, and Identities*, and *Revista de Ciencia Política*, and has been covered by major public outlets, such as [*The New York Times*](https://www.nytimes.com/2024/11/13/opinion/democrats-republicans-class-realignment.html), [*Washington Post*](https://www.washingtonpost.com/opinions/2023/10/03/people-of-color-voting-republican-2024/), and [*Axios*](https://www.axios.com/2024/04/18/latino-immigrants-election-policy-deportation-discrimination).
+
+::: {.contact-line}
+Contact me at: [idanf2@illinois.edu](mailto:idanf2@illinois.edu)
+:::

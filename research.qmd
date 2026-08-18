@@ -1,0 +1,23 @@
+---
+title: "Research"
+page-layout: article
+toc: true
+toc-location: right
+toc-title: "On this page"
+---
+
+::: {.paper}
+**Whitewashing "White Men Politics": How Racial and Ethnic Identity Mainstreams the Radical-Right**
+
+With Sivan Hirsch-Hoefler (Reichman University), Lihi Ben-Shitrit (New York University), and Julia Elad-Strenger (University of the Bundeswehr).
+
+*Abstract*: Studies show that the increasing visibility of women representatives is a strong legitimizer for the radical-right. Do radical-right politicians from racial and ethnic minorities exert a similar effect? Given the growing number of non-White politicians who tout radical-right agendas, this question is now of key importance. Since the radical-right is associated with both masculinity and Whiteness, we argue that, like in the case of women, increasing the visibility of non-White representatives renders radical-right politicians, policies, and parties more acceptable in the eyes of the public. Using original data from two surveys conducted in the United States (N=300 and N=2,500), we find that regardless of their gender, radical-right politicians from racial and ethnic minorities garner more acceptance for the policies and parties they represent than radical-right politicians without a minority background. Furthermore, we show that the attribution of feminine stereotypes to the non-White radical-right politician mediates this effect, by counteracting the radical-right’s White and masculine image.
+:::
+
+::: {.paper}
+**We (are also) the People: Immigrant Nationalism and Support for Nationalist Movements**
+
+With Raanan Rein (University of Florida).
+
+*Abstract*: While scholars study the success of populist-nationalist movements as a phenomenon of natives, populist nationalism wins substantial support also from immigrant voters. Because immigrants are theorized as agents of transnationalism, rather than of nationalism, scholars often reach for “all-but-nationalism” explanations to account for this puzzle. Meaning, immigrants must be supporting such movements for reasons other than nationalism itself, like economic distress, conservative ideology, and social class. We argue theoretically, and show empirically, that this expectation is wrong. To assess the explanatory power of national sentiments—like national belonging, national pride, and self-declared nationalism—in explaining immigrant support for populist-nationalist movements, we focus on both exclusionary and inclusionary versions of populist nationalism: these of Donald Trump and Juan Perón. We show that, like natives, immigrants are not immune to nationalist appeals coming from populist leaders. Our findings provide the first quantitative public opinion analysis of immigrant support for Perón, demonstrating that immigrant responsiveness to such appeals is neither confined to the contemporary moment nor unique to inclusionary versions of populist nationalism. Moreover, in the case of national belonging among Trump supporters, the channel runs even more strongly among immigrants than among natives. What appears to be a contradiction between inclusive Latin American populism and exclusionary radical-right populism aligns with a single underlying pattern in which immigrants engage with populist-nationalism itself, rather than with the specific ideological content the leader happens to voice.
+:::
