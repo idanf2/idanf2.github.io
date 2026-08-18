@@ -1,9 +1,6 @@
 /.quarto/
 /_site/
 .DS_Store
-*.html
-!index.html
 .Rproj.user
 *.Rproj
-
 **/*.quarto_ipynb
