@@ -171,6 +171,11 @@ a:hover {
   text-align: center !important;
   width: 100% !important;
   white-space: nowrap !important;
+  /* Give the name its own persistent identity across pages */
+  view-transition-name: hero-name-text;
+  /* Force GPU compositing for pixel-stable rendering */
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 .hero-photo {
@@ -181,14 +186,18 @@ a:hover {
   margin: 0 auto !important;
 }
 
-::view-transition-group(hero-panel) {
-  animation-duration: 0s;
+/* Disable ALL view-transition animations for hero elements so they appear truly static */
+::view-transition-group(hero-panel),
+::view-transition-group(hero-name-text) {
+  animation-duration: 0s !important;
 }
 
 ::view-transition-old(hero-panel),
-::view-transition-new(hero-panel) {
-  animation: none;
-  mix-blend-mode: normal;
+::view-transition-new(hero-panel),
+::view-transition-old(hero-name-text),
+::view-transition-new(hero-name-text) {
+  animation: none !important;
+  mix-blend-mode: normal !important;
 }
 
 /* === MAIN CONTENT === */
@@ -314,7 +323,6 @@ footer.footer {
 /* ============================================================ */
 @media (max-width: 900px) {
 
-  /* Hero panel becomes normal-flow (not fixed) */
   .hero-left {
     position: static !important;
     width: 100% !important;
@@ -359,13 +367,10 @@ footer.footer {
   }
 
   /* --- MOBILE, NON-HOME PAGES: hide hero panel, show page title --- */
-
-  /* Hide the entire hero panel (name + photo) */
   body.not-home .hero-left {
     display: none !important;
   }
 
-  /* Show Quarto's auto-generated title block */
   body.not-home #title-block-header,
   body.not-home header.quarto-title-block,
   body.not-home .quarto-title-block {
@@ -376,7 +381,6 @@ footer.footer {
     text-align: center !important;
   }
 
-  /* Style the section title */
   body.not-home #title-block-header .title,
   body.not-home header.quarto-title-block .title,
   body.not-home .quarto-title-block .title,
@@ -393,7 +397,6 @@ footer.footer {
     border: none !important;
   }
 
-  /* Hide any subtitle or metadata Quarto adds */
   body.not-home #title-block-header .subtitle,
   body.not-home #title-block-header .quarto-title-meta,
   body.not-home #title-block-header .quarto-title-authors,
