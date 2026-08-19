@@ -1,5 +1,5 @@
 ---
-title: "Research"
+title: "Working Papers"
 page-layout: article
 toc: true
 toc-location: right
