@@ -3,11 +3,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400&display=swap');
 
-/* === Cross-document view transitions for seamless nav === */
-@view-transition {
-  navigation: auto;
-}
-
 :root {
   --font-main: 'Newsreader', 'Iowan Old Style', 'Times New Roman', serif;
   --font-name: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -152,7 +147,6 @@ a:hover {
   flex-direction: column !important;
   align-items: center !important;
   gap: 0.75rem !important;
-  view-transition-name: hero-panel;
 }
 
 .hero-left > * {
@@ -171,11 +165,6 @@ a:hover {
   text-align: center !important;
   width: 100% !important;
   white-space: nowrap !important;
-  /* Give the name its own persistent identity across pages */
-  view-transition-name: hero-name-text;
-  /* Force GPU compositing for pixel-stable rendering */
-  transform: translateZ(0);
-  -webkit-font-smoothing: antialiased;
 }
 
 .hero-photo {
@@ -184,20 +173,6 @@ a:hover {
   display: block !important;
   border-radius: 2px !important;
   margin: 0 auto !important;
-}
-
-/* Disable ALL view-transition animations for hero elements so they appear truly static */
-::view-transition-group(hero-panel),
-::view-transition-group(hero-name-text) {
-  animation-duration: 0s !important;
-}
-
-::view-transition-old(hero-panel),
-::view-transition-new(hero-panel),
-::view-transition-old(hero-name-text),
-::view-transition-new(hero-name-text) {
-  animation: none !important;
-  mix-blend-mode: normal !important;
 }
 
 /* === MAIN CONTENT === */
