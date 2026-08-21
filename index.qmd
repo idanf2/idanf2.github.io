@@ -4,7 +4,7 @@ page-layout: article
 toc: false
 ---
 
-Welcome! I am a Ph.D. student in the [Department of Political Science](https://pol.illinois.edu/) at the [University of Illinois Urbana-Champaign](https://illinois.edu/), specilizing in public opinion and political behavior, and the coauthor of [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*]( https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/), published by Bloomsbury Academic.
+Welcome! I am a Ph.D. student in the [Department of Political Science](https://pol.illinois.edu/) at the [University of Illinois Urbana-Champaign](https://illinois.edu/), specializing in public opinion and political behavior, and the coauthor of [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*]( https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/), published by Bloomsbury Academic.
 
 My first strand of work revolves around “minorities within minorities,” i.e., members of minority groups—based on race, ethnicity, and migration, gender and sexual orientation, or ideology—who diverge from the majority of their groups. Because liberal democracies become increasingly more diverse, the political and social diversification occurring among minority groups become more important as well. This is particularly evident in the case of democratic backsliding, now supported and led by members of minority groups around the world in unprecedented numbers.
 
