@@ -16,7 +16,7 @@
 
   --body-width: 1280px;
   --left-col-width: 240px;
-  --photo-width: min(400px, calc((100vh - 6rem) * 2 / 3));
+  --photo-width: 280px;
   --col-gap: 3rem;
   --content-side-offset: max(2rem, calc((100vw - var(--body-width)) / 2));
   --top-offset: 3rem;
@@ -217,7 +217,7 @@ header.quarto-title-block,
   outline: none;
 }
 
-/* === RIGHT COLUMN (photo, absolute, scrolls with page) === */
+/* === RIGHT COLUMN (photo, sized dynamically by JS to match left col height) === */
 .right-col {
   position: absolute !important;
   top: var(--top-offset);
@@ -226,9 +226,9 @@ header.quarto-title-block,
 }
 
 .hero-photo {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -252,13 +252,10 @@ main#quarto-document-content > *:first-child {
   margin-top: 0 !important;
 }
 
-/* === CONTENT PANELS === */
+/* === CONTENT PANELS (left-aligned, no justification) === */
 .content-panel {
   display: none;
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
+  text-align: left;
 }
 
 .content-panel.active {
@@ -288,16 +285,6 @@ main#quarto-document-content > *:first-child {
 
 .content-panel > *:last-child {
   margin-bottom: 0 !important;
-}
-
-/* Headings stay left-aligned (justify looks weird on short lines) */
-.content-panel h1,
-.content-panel h2,
-.content-panel h3,
-.content-panel h4,
-.content-panel h5,
-.content-panel h6 {
-  text-align: left;
 }
 
 /* === SECTION TITLE (top of each tab panel, centered) === */
@@ -373,7 +360,6 @@ a:hover {
   margin: 1rem 0;
   color: var(--color-text-muted);
   font-style: italic;
-  text-align: left;
 }
 
 /* === Book cover === */
@@ -411,6 +397,11 @@ footer.footer {
     max-width: 300px !important;
     margin: 1rem auto !important;
     padding: 0 !important;
+  }
+
+  .hero-photo {
+    width: 100% !important;
+    height: auto !important;
   }
 
   .site-name {
