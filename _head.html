@@ -55,54 +55,5 @@
         showPanel('welcome');
       });
     }
-
-    // === Align photo height to left column height ===
-    function alignPhoto() {
-      var leftCol = document.querySelector('.left-col');
-      var photo = document.querySelector('.hero-photo');
-      var rightCol = document.querySelector('.right-col');
-      if (!leftCol || !photo || !rightCol) return;
-
-      // On mobile, reset any inline styles and let CSS handle
-      if (window.innerWidth < 900) {
-        photo.style.width = '';
-        photo.style.height = '';
-        rightCol.style.width = '';
-        document.documentElement.style.removeProperty('--photo-width');
-        return;
-      }
-
-      if (!photo.naturalWidth || !photo.naturalHeight) return;
-
-      var height = leftCol.getBoundingClientRect().height;
-      var aspect = photo.naturalWidth / photo.naturalHeight;
-      var width = Math.round(height * aspect);
-
-      photo.style.width = width + 'px';
-      photo.style.height = Math.round(height) + 'px';
-      rightCol.style.width = width + 'px';
-      document.documentElement.style.setProperty('--photo-width', width + 'px');
-    }
-
-    var photoEl = document.querySelector('.hero-photo');
-    if (photoEl) {
-      if (photoEl.complete && photoEl.naturalWidth) {
-        alignPhoto();
-      } else {
-        photoEl.addEventListener('load', alignPhoto);
-      }
-    }
-
-    // Re-align after web fonts finish loading (they can change left-col height)
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(alignPhoto);
-    }
-
-    // Re-align on viewport resize
-    var resizeTimer;
-    window.addEventListener('resize', function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(alignPhoto, 100);
-    });
   });
 </script>

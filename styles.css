@@ -16,7 +16,7 @@
 
   --body-width: 1280px;
   --left-col-width: 240px;
-  --photo-width: 280px;
+  --photo-width: min(360px, 30vw);
   --col-gap: 3rem;
   --content-side-offset: max(2rem, calc((100vw - var(--body-width)) / 2));
   --top-offset: 3rem;
@@ -217,7 +217,7 @@ header.quarto-title-block,
   outline: none;
 }
 
-/* === RIGHT COLUMN === */
+/* === RIGHT COLUMN (photo, larger, wider ellipse) === */
 .right-col {
   position: absolute !important;
   top: var(--top-offset);
@@ -228,9 +228,11 @@ header.quarto-title-block,
 .hero-photo {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
   border-radius: 50%;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* === MIDDLE COLUMN === */
@@ -393,14 +395,14 @@ footer.footer {
   }
 
   .right-col {
-    max-width: 300px !important;
+    max-width: 280px !important;
     margin: 1rem auto !important;
     padding: 0 !important;
   }
 
   .hero-photo {
     width: 100% !important;
-    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
   }
 
   .site-name {
