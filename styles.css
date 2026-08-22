@@ -217,7 +217,7 @@ header.quarto-title-block,
   outline: none;
 }
 
-/* === RIGHT COLUMN (photo, natural aspect — no zoom, no white space) === */
+/* === RIGHT COLUMN (photo, natural aspect) === */
 .right-col {
   position: absolute !important;
   top: var(--top-offset);
@@ -362,7 +362,7 @@ a:hover {
   font-style: italic;
 }
 
-/* === Book cover (in book panel content) === */
+/* === Book cover === */
 .book-cover {
   display: block;
   margin: 1.5rem auto;
@@ -370,6 +370,47 @@ a:hover {
   height: auto;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === BACK-TO-TOP button (fixed bottom-right, appears on scroll) === */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease, color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  color: var(--color-link);
+  border-color: var(--color-link);
+  background: rgba(255, 255, 255, 1);
+  outline: none;
 }
 
 /* === Footer hidden === */
@@ -419,5 +460,12 @@ footer.footer {
 
   .content-panel .section-title {
     font-size: 1.5rem;
+  }
+
+  .back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 40px;
+    height: 40px;
   }
 }

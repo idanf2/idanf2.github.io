@@ -55,5 +55,26 @@
         showPanel('welcome');
       });
     }
+
+    // Back-to-top button: show after scrolling past threshold
+    var backToTop = document.querySelector('.back-to-top');
+    var scrollThreshold = 300;
+
+    function toggleBackToTop() {
+      if (window.scrollY > scrollThreshold) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }
+
+    if (backToTop) {
+      window.addEventListener('scroll', toggleBackToTop, { passive: true });
+      toggleBackToTop();
+
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   });
 </script>
