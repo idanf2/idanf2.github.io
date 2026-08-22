@@ -36,6 +36,8 @@
         }
       });
       activePanel = panelName;
+      // Always scroll to top when panel changes
+      window.scrollTo(0, 0);
     }
 
     tabs.forEach(function(tab) {

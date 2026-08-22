@@ -37,7 +37,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  position: relative !important;   /* positioning ancestor for .right-col */
+  position: relative !important;
   min-height: 100vh;
 }
 
@@ -96,7 +96,7 @@ header.quarto-title-block,
   grid-template-rows: none !important;
 }
 
-/* === LEFT COLUMN (name + tabs, stays fixed while scrolling) === */
+/* === LEFT COLUMN (name + tabs + contact, stays fixed while scrolling) === */
 .left-col {
   position: fixed;
   top: var(--top-offset);
@@ -160,6 +160,11 @@ header.quarto-title-block,
   border-bottom: 1px solid var(--color-border);
 }
 
+/* Italicize the book title in the tab list (it's a book title) */
+.tab-btn[data-tab="book"] {
+  font-style: italic;
+}
+
 /* Vertical bar indicator on active tab */
 .tab-btn::before {
   content: '';
@@ -187,6 +192,33 @@ header.quarto-title-block,
   height: 70%;
 }
 
+/* === CONTACT ME button (visually distinct from tabs) === */
+.contact-btn {
+  display: inline-block;
+  margin: 1.75rem 0 0 0;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 999px;
+  font-family: var(--font-name);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none !important;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.contact-btn:hover,
+.contact-btn:focus-visible {
+  border-color: var(--color-link);
+  color: var(--color-link);
+  background: rgba(26, 58, 143, 0.04);
+  text-decoration: none !important;
+  outline: none;
+}
+
 /* === RIGHT COLUMN (photo, absolute — positioned to body, scrolls with page) === */
 .right-col {
   position: absolute !important;
@@ -203,7 +235,7 @@ header.quarto-title-block,
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* === MIDDLE COLUMN (bordered content area) === */
+/* === MIDDLE COLUMN (no visible borders) === */
 main.content,
 main#quarto-document-content {
   box-sizing: border-box !important;
@@ -212,8 +244,6 @@ main#quarto-document-content {
   max-width: 720px !important;
   width: auto !important;
   padding: 2rem var(--middle-padding) 3rem var(--middle-padding) !important;
-  border-left: 1px solid var(--color-border) !important;
-  border-right: 1px solid var(--color-border) !important;
   min-height: calc(100vh - 6rem) !important;
   margin-top: var(--top-offset) !important;
   margin-bottom: 2rem !important;
@@ -227,6 +257,10 @@ main#quarto-document-content > *:first-child {
 /* === CONTENT PANELS === */
 .content-panel {
   display: none;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .content-panel.active {
@@ -256,6 +290,16 @@ main#quarto-document-content > *:first-child {
 
 .content-panel > *:last-child {
   margin-bottom: 0 !important;
+}
+
+/* Headings stay left-aligned (justify looks weird on short lines) */
+.content-panel h1,
+.content-panel h2,
+.content-panel h3,
+.content-panel h4,
+.content-panel h5,
+.content-panel h6 {
+  text-align: left;
 }
 
 /* === Typography === */
@@ -317,6 +361,7 @@ a:hover {
   margin: 1rem 0;
   color: var(--color-text-muted);
   font-style: italic;
+  text-align: left;
 }
 
 /* === Book cover === */
@@ -367,8 +412,6 @@ footer.footer {
     margin-right: 0 !important;
     max-width: none !important;
     padding: 1.5rem 1.25rem 3rem 1.25rem !important;
-    border-left: none !important;
-    border-right: none !important;
     min-height: auto !important;
   }
 }
