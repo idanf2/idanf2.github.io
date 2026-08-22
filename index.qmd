@@ -11,7 +11,7 @@ Welcome! I am a Ph.D. student in the [Department of Political Science](https://p
 
 <div class="content-panel" data-panel="research">
 
-<h1 class="section-title">Research</h1>
+<h2 class="section-title">Research</h2>
 
 My first strand of work revolves around "minorities within minorities," i.e., members of minority groups—based on race, ethnicity, and migration, gender and sexual orientation, or ideology—who diverge from the majority of their groups. Because liberal democracies become increasingly more diverse, the political and social diversification occurring among minority groups become more important as well. This is particularly evident in the case of democratic backsliding, now supported and led by members of minority groups around the world in unprecedented numbers.
 
@@ -27,7 +27,7 @@ Contact me at: <idanf2@illinois.edu>
 
 <div class="content-panel" data-panel="publications">
 
-<h1 class="section-title">Publications</h1>
+<h2 class="section-title">Publications</h2>
 
 [**Trump's African Americans? Racial resentment and Black support for Trump in the 2020 elections**](https://doi.org/10.1080/21565503.2023.2265899)
 
@@ -55,9 +55,9 @@ Udi Sommer and **Idan Franco** (2024).
 
 <div class="content-panel" data-panel="book">
 
-<h1 class="section-title">Book</h1>
+<h2 class="section-title">Book</h2>
 
-## [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*](https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/)
+### [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*](https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/)
 
 Bloomsbury Academic, 2025 (with Udi Sommer).
 
@@ -67,7 +67,7 @@ Bloomsbury Academic, 2025 (with Udi Sommer).
 
 **Read Thomas Edsall's [column](https://www.nytimes.com/2026/02/17/opinion/trump-coalition-multiracial-working-class.html) in *The New York Times*, discussing our book.**
 
-![Cover of The Emerging Republican Minorities](img/book.jpg){.book-cover}
+<img src="img/book.jpg" class="book-cover" alt="">
 
 **How is it possible that Donald Trump, a champion of racist and anti-immigrant policies, has only attracted more minority voters since 2016? Drawing on extensive statistical analyses, our book challenges the conventional wisdom on Black, Latino, and Asian American voters.**
 
@@ -79,7 +79,7 @@ We analyze detailed regression models and conduct robust empirical tests to demo
 
 <div class="content-panel" data-panel="working-papers">
 
-<h1 class="section-title">Working Papers</h1>
+<h2 class="section-title">Working Papers</h2>
 
 **Whitewashing "White Men Politics": How Racial and Ethnic Identity Mainstreams the Radical-Right**
 

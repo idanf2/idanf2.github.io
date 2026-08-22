@@ -96,7 +96,7 @@ header.quarto-title-block,
   grid-template-rows: none !important;
 }
 
-/* === LEFT COLUMN (name + tabs + contact, stays fixed while scrolling) === */
+/* === LEFT COLUMN === */
 .left-col {
   position: fixed;
   top: var(--top-offset);
@@ -217,7 +217,7 @@ header.quarto-title-block,
   outline: none;
 }
 
-/* === RIGHT COLUMN (photo, sized dynamically by JS to match left col height) === */
+/* === RIGHT COLUMN === */
 .right-col {
   position: absolute !important;
   top: var(--top-offset);
@@ -229,8 +229,8 @@ header.quarto-title-block,
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* === MIDDLE COLUMN === */
@@ -252,7 +252,7 @@ main#quarto-document-content > *:first-child {
   margin-top: 0 !important;
 }
 
-/* === CONTENT PANELS (left-aligned, no justification) === */
+/* === CONTENT PANELS === */
 .content-panel {
   display: none;
   text-align: left;
@@ -287,7 +287,7 @@ main#quarto-document-content > *:first-child {
   margin-bottom: 0 !important;
 }
 
-/* === SECTION TITLE (top of each tab panel, centered) === */
+/* === SECTION TITLE === */
 .content-panel .section-title {
   font-family: var(--font-main);
   font-size: 1.85rem;
@@ -338,12 +338,12 @@ a:hover {
   color: var(--color-link-hover);
 }
 
-.content-panel h2 a {
+.content-panel h3 a {
   color: var(--color-text);
   text-decoration: none;
 }
 
-.content-panel h2 a:hover {
+.content-panel h3 a:hover {
   color: var(--color-link);
   text-decoration: underline;
 }
@@ -362,9 +362,8 @@ a:hover {
   font-style: italic;
 }
 
-/* === Book cover === */
-.book-cover,
-.content-panel img {
+/* === Book cover (in book panel content) === */
+.book-cover {
   display: block;
   margin: 1.5rem auto;
   max-width: 250px;
