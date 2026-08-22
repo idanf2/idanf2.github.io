@@ -14,16 +14,24 @@
       }
     });
 
-    // Accordion: when one <details> opens, auto-close the others
+    // Accordion: auto-close others, then scroll opened tab into view
     var accordions = document.querySelectorAll('details.accordion-item');
     accordions.forEach(function(item) {
       item.addEventListener('toggle', function() {
         if (this.open) {
+          // Close other open tabs
           accordions.forEach(function(other) {
             if (other !== item && other.open) {
               other.open = false;
             }
           });
+          // Scroll this tab's summary near the top of the viewport
+          // (offset accounts for navbar height)
+          var navbar = document.querySelector('.navbar');
+          var navbarHeight = navbar ? navbar.offsetHeight : 70;
+          var offset = navbarHeight + 16;
+          var y = item.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
       });
     });

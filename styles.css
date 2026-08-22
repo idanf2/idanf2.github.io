@@ -30,6 +30,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 /* === Navbar (name centered as masthead) === */
@@ -38,8 +39,10 @@ body {
   padding-top: 1.25rem !important;
   padding-bottom: 1.25rem !important;
   background: var(--color-navbar-bg) !important;
+  position: relative !important;
 }
 
+/* Force the navbar container to be fully centered */
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-xxl,
@@ -47,10 +50,24 @@ body {
 .navbar > .container-lg,
 .navbar > .container-md,
 .navbar > .container-sm {
+  display: flex !important;
   justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-.navbar-brand {
+/* Override any auto-margins on the brand and position it as the sole centered element */
+.navbar .navbar-brand,
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand,
+.navbar > .container-lg .navbar-brand,
+.navbar > .container-xl .navbar-brand {
   display: inline-block !important;
   font-family: var(--font-name) !important;
   font-size: 1.75rem !important;
@@ -58,15 +75,31 @@ body {
   letter-spacing: -0.03em !important;
   color: var(--color-text) !important;
   text-decoration: none !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
   padding: 0 !important;
   line-height: 1 !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  white-space: nowrap !important;
 }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
   color: var(--color-text) !important;
   text-decoration: none !important;
+}
+
+/* Give the navbar enough height to center the brand into */
+.navbar > .container,
+.navbar > .container-fluid,
+.navbar > .container-xxl,
+.navbar > .container-xl,
+.navbar > .container-lg,
+.navbar > .container-md,
+.navbar > .container-sm {
+  min-height: 2.5rem !important;
 }
 
 /* Hide nav items, search, hamburger */
@@ -175,6 +208,7 @@ details.accordion-item {
   border-top: 1px solid var(--color-border);
   padding: 0;
   margin: 0;
+  scroll-margin-top: 5.5rem;
 }
 
 details.accordion-item:last-of-type {
