@@ -16,7 +16,7 @@
 
   --body-width: 1280px;
   --left-col-width: 240px;
-  --photo-width: min(360px, 30vw);
+  --photo-width: 260px;
   --col-gap: 3rem;
   --content-side-offset: max(2rem, calc((100vw - var(--body-width)) / 2));
   --top-offset: 3rem;
@@ -217,7 +217,7 @@ header.quarto-title-block,
   outline: none;
 }
 
-/* === RIGHT COLUMN (photo, natural aspect) === */
+/* === RIGHT COLUMN (photo, rounded rectangle, sized by JS to match left col) === */
 .right-col {
   position: absolute !important;
   top: var(--top-offset);
@@ -229,7 +229,7 @@ header.quarto-title-block,
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 50%;
+  border-radius: 14px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
@@ -372,7 +372,7 @@ a:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* === BACK-TO-TOP button (fixed bottom-right, appears on scroll) === */
+/* === BACK-TO-TOP button === */
 .back-to-top {
   position: fixed;
   bottom: 2rem;
