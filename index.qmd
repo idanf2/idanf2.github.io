@@ -1,12 +1,18 @@
 ---
 title: ""
 page-layout: article
-toc: false
 ---
 
-Welcome! I am a Ph.D. student in the [Department of Political Science](https://pol.illinois.edu/) at the [University of Illinois Urbana-Champaign](https://illinois.edu/), specializing in public opinion and political behavior, and the coauthor of [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*]( https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/), published by Bloomsbury Academic.
+::: {.welcome-paragraph}
+Welcome! I am a Ph.D. student in the [Department of Political Science](https://pol.illinois.edu/) at the [University of Illinois Urbana-Champaign](https://illinois.edu/), specializing in public opinion and political behavior, and the coauthor of [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*](https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/), published by Bloomsbury Academic.
+:::
 
-My first strand of work revolves around “minorities within minorities,” i.e., members of minority groups—based on race, ethnicity, and migration, gender and sexual orientation, or ideology—who diverge from the majority of their groups. Because liberal democracies become increasingly more diverse, the political and social diversification occurring among minority groups become more important as well. This is particularly evident in the case of democratic backsliding, now supported and led by members of minority groups around the world in unprecedented numbers.
+<details class="accordion-item">
+<summary>Research</summary>
+
+::: {.accordion-content}
+
+My first strand of work revolves around "minorities within minorities," i.e., members of minority groups—based on race, ethnicity, and migration, gender and sexual orientation, or ideology—who diverge from the majority of their groups. Because liberal democracies become increasingly more diverse, the political and social diversification occurring among minority groups become more important as well. This is particularly evident in the case of democratic backsliding, now supported and led by members of minority groups around the world in unprecedented numbers.
 
 In my second strand of work, I study public opinion in the international context. I am interested in why, how, and when individuals change their opinions and attitudes towards countries, leaders, and peoples, in response to major international events.
 
@@ -14,6 +20,89 @@ Geographically, my works concentrate on the United States, Latin America, and th
 
 My works have been published in the *European Political Science Review*, *Groups, Politics, and Identities*, and *Revista de Ciencia Política*, and has been covered by major public outlets, such as [*The New York Times*](https://www.nytimes.com/2024/11/13/opinion/democrats-republicans-class-realignment.html), [*Washington Post*](https://www.washingtonpost.com/opinions/2023/10/03/people-of-color-voting-republican-2024/), and [*Axios*](https://www.axios.com/2024/04/18/latino-immigrants-election-policy-deportation-discrimination).
 
-::: {.contact-line}
-Contact me at: [idanf2@illinois.edu](mailto:idanf2@illinois.edu)
+Contact me at: <idanf2@illinois.edu>
+
 :::
+
+</details>
+
+<details class="accordion-item">
+<summary>Publications</summary>
+
+::: {.accordion-content}
+
+[**Trump's African Americans? Racial resentment and Black support for Trump in the 2020 elections**](https://doi.org/10.1080/21565503.2023.2265899)
+
+Udi Sommer and **Idan Franco** (2024).
+
+*Politics, Groups, and Identities*, 12(4), 921–47.
+
+---
+
+[**Solidarity in question: Activation of dormant political dispositions and Latino support for Trump in 2020**](https://doi.org/10.1017/S1755773923000371)
+
+Udi Sommer and **Idan Franco** (2024).
+
+*European Political Science Review*, 16(3), 351–77.
+
+---
+
+[**¿Nuestra América? Antiinmigración y apoyo latino a Trump**](https://doi.org/10.4067/s0718-090x2025000300106)
+
+**Idan Franco** and Udi Sommer (2025).
+
+*Revista de ciencia política* (Santiago), 45(3).
+
+:::
+
+</details>
+
+<details class="accordion-item">
+<summary>The Emerging Republican Minorities</summary>
+
+::: {.accordion-content}
+
+## [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*](https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/)
+
+Bloomsbury Academic, 2025 (with Udi Sommer).
+
+**Recommended by** *CHOICE: Current Reviews for Academic Libraries*, the premier review journal of new academic titles, published by the Association of College and Research Libraries (August 2025):
+
+> "A timely and important book … the authors compel us to reconsider the oft-repeated claim of emerging Democratic majorities with more diverse electorates. Demographics are not destiny."
+
+**Read Thomas Edsall's [column](https://www.nytimes.com/2026/02/17/opinion/trump-coalition-multiracial-working-class.html) in *The New York Times*, discussing our book.**
+
+![Cover of The Emerging Republican Minorities](img/book.jpg){.book-cover}
+
+**How is it possible that Donald Trump, a champion of racist and anti-immigrant policies, has only attracted more minority voters since 2016? Drawing on extensive statistical analyses, our book challenges the conventional wisdom on Black, Latino, and Asian American voters.**
+
+Positing a host of theoretical innovations based on diverse data sources, *The Emerging Republican Minorities* establishes that some of the most heated debates of the Trump era-race, immigration, and relations with China-had effects on minority voters that challenged a paradigm ascribing their automatic loyalty to the Democrats. For Black, Latino/a, and Asian American constituents, much like for their white counterparts, minority-hostile positions are critical in explaining how members of those same minority groups vote, even for candidates who prima facie should not win any of their support.
+
+We analyze detailed regression models and conduct robust empirical tests to demonstrate how minority constituencies are more ideologically diverse than commonly thought, even on such issues where we would expect near unanimity, such as opinions towards their own communities. Moreover, this diversity complicates the way we think and theorize not only about minority political behavior but also about democracy and its vitality in the Trump and post-Trump eras.
+
+:::
+
+</details>
+
+<details class="accordion-item">
+<summary>Working Papers</summary>
+
+::: {.accordion-content}
+
+**Whitewashing "White Men Politics": How Racial and Ethnic Identity Mainstreams the Radical-Right**
+
+With Sivan Hirsch-Hoefler (Reichman University), Lihi Ben-Shitrit (New York University), and Julia Elad-Strenger (University of the Bundeswehr).
+
+*Abstract*: Studies show that the increasing visibility of women representatives is a strong legitimizer for the radical-right. Do radical-right politicians from racial and ethnic minorities exert a similar effect? Given the growing number of non-White politicians who tout radical-right agendas, this question is now of key importance. Since the radical-right is associated with both masculinity and Whiteness, we argue that, like in the case of women, increasing the visibility of non-White representatives renders radical-right politicians, policies, and parties more acceptable in the eyes of the public. Using original data from two surveys conducted in the United States (N=300 and N=2,500), we find that regardless of their gender, radical-right politicians from racial and ethnic minorities garner more acceptance for the policies and parties they represent than radical-right politicians without a minority background. Furthermore, we show that the attribution of feminine stereotypes to the non-White radical-right politician mediates this effect, by counteracting the radical-right's White and masculine image.
+
+---
+
+**We (are also) the People: Immigrant Nationalism and Support for Nationalist Movements**
+
+With Raanan Rein (University of Florida).
+
+*Abstract*: While scholars study the success of populist-nationalist movements as a phenomenon of natives, populist nationalism wins substantial support also from immigrant voters. Because immigrants are theorized as agents of transnationalism, rather than of nationalism, scholars often reach for "all-but-nationalism" explanations to account for this puzzle. Meaning, immigrants must be supporting such movements for reasons other than nationalism itself, like economic distress, conservative ideology, and social class. We argue theoretically, and show empirically, that this expectation is wrong. To assess the explanatory power of national sentiments—like national belonging, national pride, and self-declared nationalism—in explaining immigrant support for populist-nationalist movements, we focus on both exclusionary and inclusionary versions of populist nationalism: these of Donald Trump and Juan Perón. We show that, like natives, immigrants are not immune to nationalist appeals coming from populist leaders. Our findings provide the first quantitative public opinion analysis of immigrant support for Perón, demonstrating that immigrant responsiveness to such appeals is neither confined to the contemporary moment nor unique to inclusionary versions of populist nationalism. Moreover, in the case of national belonging among Trump supporters, the channel runs even more strongly among immigrants than among natives. What appears to be a contradiction between inclusive Latin American populism and exclusionary radical-right populism aligns with a single underlying pattern in which immigrants engage with populist-nationalism itself, rather than with the specific ideological content the leader happens to voice.
+
+:::
+
+</details>

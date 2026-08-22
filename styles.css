@@ -1,23 +1,24 @@
-/* === IDAN FRANCO — Personal site === */
-/* Aesthetic: Chagai Weiss-inspired. Newsreader body, Inter for the name. */
+/* === IDAN FRANCO — Personal site (single-page accordion design) === */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400&display=swap');
 
 :root {
   --font-main: 'Newsreader', 'Iowan Old Style', 'Times New Roman', serif;
   --font-name: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
   --color-text: #111111;
   --color-text-muted: #555555;
   --color-bg: #ffffff;
   --color-navbar-bg: #f5f5f5;
   --color-border: #e5e5e5;
+  --color-border-strong: #b8b8b8;
   --color-link: #1a3a8f;
   --color-link-hover: #4a6ac0;
-  --left-col-width: min(580px, calc((100vh - 9rem) * 2 / 3));
-  --left-col-gap: 40px;
-  --right-col-width: 620px;
-  --content-total: calc(var(--left-col-width) + var(--left-col-gap) + var(--right-col-width));
+
   --body-width: 1240px;
+  --photo-width: min(500px, 38vw, calc((100vh - 8rem) * 2 / 3));
+  --content-side-offset: max(2rem, calc((100vw - var(--body-width)) / 2));
+  --col-gap: 3rem;
 }
 
 /* === Base === */
@@ -28,19 +29,15 @@ body {
   font-weight: 400;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* === Navbar (desktop) === */
+/* === Navbar (name centered as masthead) === */
 .navbar {
   border-bottom: 1px solid var(--color-border) !important;
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
   background: var(--color-navbar-bg) !important;
-  font-family: var(--font-main) !important;
-}
-
-.navbar-brand {
-  display: none !important;
 }
 
 .navbar > .container,
@@ -53,41 +50,36 @@ body {
   justify-content: center !important;
 }
 
-.navbar-collapse {
-  flex-grow: 0 !important;
-  justify-content: center !important;
-}
-
-.navbar-nav {
-  margin: 0 auto !important;
-  flex-direction: row !important;
-}
-
-.navbar-nav .nav-link {
-  font-weight: 500;
-  font-size: 1.05rem;
+.navbar-brand {
+  display: inline-block !important;
+  font-family: var(--font-name) !important;
+  font-size: 1.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
   color: var(--color-text) !important;
-  margin: 0 1.25rem !important;
-  padding: 0.25rem 0 !important;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease;
-  font-family: var(--font-main) !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  color: var(--color-link) !important;
-  border-bottom: 2px solid var(--color-link);
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: var(--color-text) !important;
+  text-decoration: none !important;
 }
 
-/* Hide the search icon */
+/* Hide nav items, search, hamburger */
+.navbar-nav,
+.navbar-toggler,
+.navbar-collapse,
 .aa-DetachedSearchButton,
 .quarto-search,
 .navbar .search {
   display: none !important;
 }
 
-/* Hide auto-generated title block (desktop default) */
+/* Hide auto-generated title block */
 #title-block-header,
 header.quarto-title-block,
 .quarto-title-block {
@@ -100,30 +92,25 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--color-text);
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 0.5rem;
-  margin-top: 3rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin-top: 2rem;
 }
 
 p {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
   color: var(--color-text);
 }
 
-/* === Links === */
 a {
   color: var(--color-link);
   text-decoration: underline;
@@ -136,157 +123,185 @@ a:hover {
   color: var(--color-link-hover);
 }
 
-/* === HERO LEFT: fixed panel on desktop === */
-.hero-left {
+/* === HERO PHOTO (fixed on left) === */
+.hero-photo-panel {
   position: fixed !important;
-  top: 5rem !important;
-  width: var(--left-col-width) !important;
-  left: max(2rem, calc((100vw - var(--content-total)) / 2)) !important;
-  z-index: 5 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 0.75rem !important;
-}
-
-.hero-left > * {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.hero-name {
-  font-family: var(--font-name) !important;
-  font-size: 2.5rem !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.03em !important;
-  line-height: 1.05 !important;
-  color: var(--color-text) !important;
-  margin: 0 !important;
-  text-align: center !important;
-  width: 100% !important;
-  white-space: nowrap !important;
+  top: 6rem;
+  left: var(--content-side-offset);
+  width: var(--photo-width);
+  z-index: 5;
 }
 
 .hero-photo {
-  width: 100% !important;
-  height: auto !important;
-  display: block !important;
-border-radius: 8px !important;
-  margin: 0 auto !important;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* === MAIN CONTENT === */
+/* === MAIN CONTENT (right column) === */
 main.content,
 main#quarto-document-content {
-  margin-left: calc((var(--body-width) - var(--content-total)) / 2 + var(--left-col-width) + var(--left-col-gap)) !important;
-  max-width: var(--right-col-width) !important;
-  padding-top: 0.5rem;
+  margin-left: calc(var(--content-side-offset) + var(--photo-width) + var(--col-gap)) !important;
+  margin-right: var(--content-side-offset) !important;
+  max-width: 640px !important;
+  padding-top: 1.75rem !important;
+  padding-bottom: 3rem !important;
   min-height: calc(100vh - 8rem);
 }
 
-main.content > p:first-of-type,
-main#quarto-document-content > p:first-of-type {
-  margin-top: 0;
+main.content > *:first-child,
+main#quarto-document-content > *:first-child {
+  margin-top: 0 !important;
 }
 
-/* === Contact and quick links === */
-.contact-line {
-  font-size: 1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.contact-line a {
-  font-weight: 500;
-}
-
-.quick-links {
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-border);
-  line-height: 2;
-}
-
-.quick-links a {
-  display: inline-block;
-  margin-right: 0.25rem;
-}
-
-/* === Research questions list === */
-.research-questions {
-  list-style: none;
-  padding-left: 0;
-  margin: 1.5rem 0;
-  counter-reset: question;
-}
-
-.research-questions li {
-  counter-increment: question;
-  margin-bottom: 1rem;
-  padding-left: 2.25rem;
-  position: relative;
-  font-weight: 500;
-}
-
-.research-questions li::before {
-  content: counter(question) ".";
-  position: absolute;
-  left: 0;
-  font-weight: 700;
+/* === Welcome paragraph === */
+.welcome-paragraph {
+  font-size: 1.15rem;
+  line-height: 1.65;
   color: var(--color-text);
-}
-
-/* === Publications list === */
-.publication,
-.paper {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  margin: 0 0 2.5rem 0;
+  padding: 0 0 2rem 0;
   border-bottom: 1px solid var(--color-border);
 }
 
-.publication:last-of-type,
-.paper:last-of-type {
-  border-bottom: none;
+.welcome-paragraph p {
+  margin: 0;
 }
 
-.publication-title {
-  font-weight: 600;
+/* === ACCORDION === */
+details.accordion-item {
+  border-top: 1px solid var(--color-border);
+  padding: 0;
+  margin: 0;
+}
+
+details.accordion-item:last-of-type {
+  border-bottom: 1px solid var(--color-border);
+}
+
+details.accordion-item > summary {
   display: block;
-  margin-bottom: 0.25rem;
+  cursor: pointer;
+  padding: 1.4rem 3rem 1.4rem 0;
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  position: relative;
+  transition: color 0.15s ease;
+  user-select: none;
+  list-style: none;
+  outline: none;
 }
 
-.publication-authors {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 0.25rem;
+/* Remove default disclosure triangle */
+details.accordion-item > summary::-webkit-details-marker {
+  display: none;
 }
 
-.publication-venue {
-  font-style: italic;
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
+details.accordion-item > summary::marker {
+  display: none;
+  content: "";
 }
 
-.publication-links {
+/* Custom chevron indicator */
+details.accordion-item > summary::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--color-text-muted);
+  border-bottom: 1.5px solid var(--color-text-muted);
+  transform: translateY(-75%) rotate(45deg);
+  transition: transform 0.3s ease, border-color 0.15s ease;
+}
+
+details.accordion-item[open] > summary::after {
+  transform: translateY(-25%) rotate(-135deg);
+}
+
+details.accordion-item > summary:hover,
+details.accordion-item > summary:focus-visible {
+  color: var(--color-link);
+}
+
+details.accordion-item > summary:hover::after,
+details.accordion-item > summary:focus-visible::after {
+  border-color: var(--color-link);
+}
+
+/* Accordion content */
+.accordion-content {
+  padding: 0.4rem 0 2rem 0;
+  color: var(--color-text);
+  animation: accordionOpen 0.35s ease-out;
+}
+
+.accordion-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+.accordion-content > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.accordion-content h2 {
+  font-size: 1.25rem;
   margin-top: 0.5rem;
-  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
-.publication-links a {
-  margin-right: 1rem;
+.accordion-content h2 a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.accordion-content h2 a:hover {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+.accordion-content hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 1.5rem 0;
+}
+
+.accordion-content blockquote {
+  border-left: 3px solid var(--color-border-strong);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+@keyframes accordionOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* === Book cover image === */
-.book-cover {
+.book-cover,
+.accordion-content img {
   display: block;
   margin: 1.5rem auto;
-  max-width: 100%;
+  max-width: 250px;
   height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* === Footer: completely hidden === */
+/* === Footer hidden === */
 .nav-footer,
 .page-footer,
 footer.footer {
@@ -297,86 +312,39 @@ footer.footer {
 /* === MOBILE (≤ 900px viewport width) ===                      */
 /* ============================================================ */
 @media (max-width: 900px) {
+  .navbar-brand {
+    font-size: 1.5rem !important;
+  }
 
-  .hero-left {
+  .hero-photo-panel {
     position: static !important;
-    width: 100% !important;
-    max-width: 500px !important;
     left: auto !important;
-    margin: 0 auto 2rem auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 1.5rem auto 0.5rem auto !important;
   }
 
   main.content,
   main#quarto-document-content {
     margin-left: 0 !important;
+    margin-right: 0 !important;
     max-width: none !important;
+    padding: 1.5rem 1.25rem 3rem 1.25rem !important;
   }
 
-  .hero-name {
-    font-size: 2.5rem !important;
+  .welcome-paragraph {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
   }
 
-  /* --- MOBILE NAV: force horizontal, no hamburger --- */
-  .navbar-toggler {
-    display: none !important;
+  details.accordion-item > summary {
+    font-size: 1.1rem;
+    padding: 1.2rem 2.5rem 1.2rem 0;
   }
 
-  .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto !important;
-    flex-grow: 0 !important;
-  }
-
-  .navbar-nav {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 0.25rem 0.5rem !important;
-    margin: 0 !important;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 0.85rem !important;
-    margin: 0 0.4rem !important;
-    padding: 0.15rem 0 !important;
-  }
-
-  /* --- MOBILE, NON-HOME PAGES: hide hero panel, show page title --- */
-  body.not-home .hero-left {
-    display: none !important;
-  }
-
-  body.not-home #title-block-header,
-  body.not-home header.quarto-title-block,
-  body.not-home .quarto-title-block {
-    display: block !important;
-    margin: 1.5rem 0 2rem 0 !important;
-    padding-bottom: 1rem !important;
-    border-bottom: 1px solid var(--color-border) !important;
-    text-align: center !important;
-  }
-
-  body.not-home #title-block-header .title,
-  body.not-home header.quarto-title-block .title,
-  body.not-home .quarto-title-block .title,
-  body.not-home #title-block-header h1.title,
-  body.not-home header.quarto-title-block h1.title {
-    font-family: var(--font-name) !important;
-    font-size: 2rem !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.02em !important;
-    color: var(--color-text) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: center !important;
-    border: none !important;
-  }
-
-  body.not-home #title-block-header .subtitle,
-  body.not-home #title-block-header .quarto-title-meta,
-  body.not-home #title-block-header .quarto-title-authors,
-  body.not-home #title-block-header .date,
-  body.not-home #title-block-header .author {
-    display: none !important;
+  .accordion-content {
+    padding-bottom: 1.5rem;
   }
 }

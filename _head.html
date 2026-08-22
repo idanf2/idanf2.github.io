@@ -1,19 +1,9 @@
-<meta name="view-transition" content="same-origin">
 <link rel="preload" as="image" href="img/headshot.jpg">
+<link rel="preload" as="image" href="img/book.jpg">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400&display=swap" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="prefetch" href="publications.html">
-<link rel="prefetch" href="book.html">
-<link rel="prefetch" href="research.html">
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Mark non-home pages so CSS can hide the photo on mobile
-    var path = window.location.pathname;
-    var isHome = path === '/' || path === '/index.html' || path.endsWith('/index.html') || /^\/?$/.test(path);
-    if (!isHome) {
-      document.body.classList.add('not-home');
-    }
-
     // Open external http(s) links in a new tab
     document.querySelectorAll('a[href]').forEach(function(link) {
       var href = link.getAttribute('href');
@@ -22,6 +12,20 @@
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
       }
+    });
+
+    // Accordion: when one <details> opens, auto-close the others
+    var accordions = document.querySelectorAll('details.accordion-item');
+    accordions.forEach(function(item) {
+      item.addEventListener('toggle', function() {
+        if (this.open) {
+          accordions.forEach(function(other) {
+            if (other !== item && other.open) {
+              other.open = false;
+            }
+          });
+        }
+      });
     });
   });
 </script>

@@ -14,15 +14,6 @@ website:
     pinned: true
     background: light
     foreground: black
-    left:
-      - text: "Home"
-        href: index.qmd
-      - text: "Publications"
-        href: publications.qmd
-      - text: "The Emerging Republican Minorities"
-        href: book.qmd
-      - text: "Working Papers"
-        href: research.qmd
 
 format:
   html:
