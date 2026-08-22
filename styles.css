@@ -1,4 +1,4 @@
-/* === IDAN FRANCO — Personal site (single-page accordion design) === */
+/* === IDAN FRANCO — Personal site (three-column tab layout) === */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400&display=swap');
 
@@ -9,16 +9,17 @@
   --color-text: #111111;
   --color-text-muted: #555555;
   --color-bg: #ffffff;
-  --color-navbar-bg: #ffffff;
   --color-border: #e5e5e5;
   --color-border-strong: #b8b8b8;
   --color-link: #1a3a8f;
   --color-link-hover: #4a6ac0;
 
-  --body-width: 1240px;
-  --photo-width: min(500px, 38vw, calc((100vh - 8rem) * 2 / 3));
-  --content-side-offset: max(2rem, calc((100vw - var(--body-width)) / 2));
+  --body-width: 1280px;
+  --left-col-width: 240px;
+  --photo-width: min(400px, calc((100vh - 6rem) * 2 / 3));
   --col-gap: 3rem;
+  --content-side-offset: max(2rem, calc((100vw - var(--body-width)) / 2));
+  --top-offset: 3rem;
 }
 
 /* === Base === */
@@ -30,66 +31,12 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
 
-/* === Navbar (name centered as masthead) === */
-.navbar {
-  border-bottom: 1px solid var(--color-border) !important;
-  padding-top: 1.25rem !important;
-  padding-bottom: 1.25rem !important;
-  background: var(--color-navbar-bg) !important;
-  position: relative !important;
-}
-
-.navbar > .container,
-.navbar > .container-fluid,
-.navbar > .container-xxl,
-.navbar > .container-xl,
-.navbar > .container-lg,
-.navbar > .container-md,
-.navbar > .container-sm {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  position: relative !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  min-height: 2.5rem !important;
-}
-
-.navbar .navbar-brand,
-.navbar > .container .navbar-brand,
-.navbar > .container-fluid .navbar-brand,
-.navbar > .container-lg .navbar-brand,
-.navbar > .container-xl .navbar-brand {
-  display: inline-block !important;
-  font-family: var(--font-name) !important;
-  font-size: 1.75rem !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.03em !important;
-  color: var(--color-text) !important;
-  text-decoration: none !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  line-height: 1 !important;
-  position: absolute !important;
-  left: 50% !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  white-space: nowrap !important;
-}
-
-.navbar-brand:hover,
-.navbar-brand:focus {
-  color: var(--color-text) !important;
-  text-decoration: none !important;
-}
-
+/* === Hide navbar entirely (no top separator line) === */
+.navbar,
+#quarto-header,
+header.navbar,
 .navbar-nav,
 .navbar-toggler,
 .navbar-collapse,
@@ -99,10 +46,169 @@ body {
   display: none !important;
 }
 
+/* Hide auto-generated title block */
 #title-block-header,
 header.quarto-title-block,
 .quarto-title-block {
   display: none !important;
+}
+
+/* === LEFT COLUMN (name + tabs) === */
+.left-col {
+  position: fixed;
+  top: var(--top-offset);
+  left: var(--content-side-offset);
+  width: var(--left-col-width);
+  z-index: 5;
+}
+
+.site-name {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-name);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+  margin: 0 0 2rem 0;
+  transition: color 0.15s ease;
+}
+
+.site-name:hover,
+.site-name:focus-visible {
+  color: var(--color-link);
+  outline: none;
+}
+
+.tab-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tab-btn {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 0 0.9rem 1rem;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text);
+  position: relative;
+  transition: color 0.15s ease;
+  line-height: 1.35;
+  border-top: 1px solid var(--color-border);
+  outline: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.tab-btn:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Vertical bar indicator on active tab */
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: var(--color-link);
+  transition: height 0.25s ease;
+}
+
+.tab-btn:hover,
+.tab-btn:focus-visible {
+  color: var(--color-link);
+}
+
+.tab-btn.active {
+  color: var(--color-link);
+  font-weight: 600;
+}
+
+.tab-btn.active::before {
+  height: 70%;
+}
+
+/* === RIGHT COLUMN (photo) === */
+.right-col {
+  position: fixed;
+  top: var(--top-offset);
+  right: var(--content-side-offset);
+  width: var(--photo-width);
+  z-index: 5;
+}
+
+.hero-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* === MIDDLE COLUMN (content panels) === */
+main.content,
+main#quarto-document-content {
+  margin-left: calc(var(--content-side-offset) + var(--left-col-width) + var(--col-gap)) !important;
+  margin-right: calc(var(--content-side-offset) + var(--photo-width) + var(--col-gap)) !important;
+  max-width: 640px !important;
+  padding-top: var(--top-offset) !important;
+  padding-bottom: 3rem !important;
+  min-height: calc(100vh - 6rem);
+}
+
+main.content > *:first-child,
+main#quarto-document-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* === CONTENT PANELS === */
+.content-panel {
+  display: none;
+}
+
+.content-panel.active {
+  display: block;
+  animation: panelFadeIn 0.25s ease-out;
+}
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-panel[data-panel="welcome"] {
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+.content-panel > *:first-child {
+  margin-top: 0 !important;
+}
+
+.content-panel > *:last-child {
+  margin-bottom: 0 !important;
 }
 
 /* === Typography === */
@@ -111,12 +217,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--color-text);
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
@@ -142,153 +248,23 @@ a:hover {
   color: var(--color-link-hover);
 }
 
-/* === HERO PHOTO (fixed on left) === */
-.hero-photo-panel {
-  position: fixed !important;
-  top: 6rem;
-  left: var(--content-side-offset);
-  width: var(--photo-width);
-  z-index: 5;
-}
-
-.hero-photo {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* === MAIN CONTENT (right column) === */
-main.content,
-main#quarto-document-content {
-  margin-left: calc(var(--content-side-offset) + var(--photo-width) + var(--col-gap)) !important;
-  margin-right: var(--content-side-offset) !important;
-  max-width: 640px !important;
-  padding-top: 1.75rem !important;
-  padding-bottom: 3rem !important;
-  min-height: calc(100vh - 8rem);
-}
-
-main.content > *:first-child,
-main#quarto-document-content > *:first-child {
-  margin-top: 0 !important;
-}
-
-/* === Welcome paragraph === */
-.welcome-paragraph {
-  font-size: 1.15rem;
-  line-height: 1.65;
-  color: var(--color-text);
-  margin: 0 0 2.5rem 0;
-  padding: 0 0 2rem 0;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.welcome-paragraph p {
-  margin: 0;
-}
-
-/* === ACCORDION === */
-details.accordion-item {
-  border-top: 1px solid var(--color-border);
-  padding: 0;
-  margin: 0;
-  scroll-margin-top: 5.5rem;
-}
-
-details.accordion-item:last-of-type {
-  border-bottom: 1px solid var(--color-border);
-}
-
-details.accordion-item > summary {
-  display: block;
-  cursor: pointer;
-  padding: 1.4rem 3rem 1.4rem 0;
-  font-family: var(--font-main);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-text);
-  position: relative;
-  transition: color 0.15s ease;
-  user-select: none;
-  list-style: none;
-  outline: none;
-}
-
-details.accordion-item > summary::-webkit-details-marker {
-  display: none;
-}
-
-details.accordion-item > summary::marker {
-  display: none;
-  content: "";
-}
-
-details.accordion-item > summary::after {
-  content: '';
-  position: absolute;
-  right: 4px;
-  top: 50%;
-  width: 9px;
-  height: 9px;
-  border-right: 1.5px solid var(--color-text-muted);
-  border-bottom: 1.5px solid var(--color-text-muted);
-  transform: translateY(-75%) rotate(45deg);
-  transition: transform 0.3s ease, border-color 0.15s ease;
-}
-
-details.accordion-item[open] > summary::after {
-  transform: translateY(-25%) rotate(-135deg);
-}
-
-details.accordion-item > summary:hover,
-details.accordion-item > summary:focus-visible {
-  color: var(--color-link);
-}
-
-details.accordion-item > summary:hover::after,
-details.accordion-item > summary:focus-visible::after {
-  border-color: var(--color-link);
-}
-
-.accordion-content {
-  padding: 0.4rem 0 2rem 0;
-  color: var(--color-text);
-  animation: accordionOpen 0.35s ease-out;
-}
-
-.accordion-content > *:first-child {
-  margin-top: 0 !important;
-}
-
-.accordion-content > *:last-child {
-  margin-bottom: 0 !important;
-}
-
-.accordion-content h2 {
-  font-size: 1.25rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.accordion-content h2 a {
+.content-panel h2 a {
   color: var(--color-text);
   text-decoration: none;
 }
 
-.accordion-content h2 a:hover {
+.content-panel h2 a:hover {
   color: var(--color-link);
   text-decoration: underline;
 }
 
-.accordion-content hr {
+.content-panel hr {
   border: none;
   border-top: 1px solid var(--color-border);
   margin: 1.5rem 0;
 }
 
-.accordion-content blockquote {
+.content-panel blockquote {
   border-left: 3px solid var(--color-border-strong);
   padding-left: 1rem;
   margin: 1rem 0;
@@ -296,20 +272,9 @@ details.accordion-item > summary:focus-visible::after {
   font-style: italic;
 }
 
-@keyframes accordionOpen {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === Book cover image === */
+/* === Book cover === */
 .book-cover,
-.accordion-content img {
+.content-panel img {
   display: block;
   margin: 1.5rem auto;
   max-width: 250px;
@@ -325,21 +290,28 @@ footer.footer {
   display: none !important;
 }
 
-/* ============================================================ */
-/* === MOBILE (≤ 900px viewport width) ===                      */
-/* ============================================================ */
+/* === MOBILE (basic fallback; not fully optimized yet) === */
 @media (max-width: 900px) {
-  .navbar-brand {
-    font-size: 1.5rem !important;
+  .left-col,
+  .right-col {
+    position: static !important;
+    width: auto !important;
+    max-width: none !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    padding: 1.25rem 1.25rem 0 1.25rem !important;
   }
 
-  .hero-photo-panel {
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: 100% !important;
+  .right-col {
     max-width: 300px !important;
-    margin: 1.5rem auto 0.5rem auto !important;
+    margin: 1rem auto !important;
+    padding: 0 !important;
+  }
+
+  .site-name {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   main.content,
@@ -348,20 +320,5 @@ footer.footer {
     margin-right: 0 !important;
     max-width: none !important;
     padding: 1.5rem 1.25rem 3rem 1.25rem !important;
-  }
-
-  .welcome-paragraph {
-    font-size: 1.05rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-  }
-
-  details.accordion-item > summary {
-    font-size: 1.1rem;
-    padding: 1.2rem 2.5rem 1.2rem 0;
-  }
-
-  .accordion-content {
-    padding-bottom: 1.5rem;
   }
 }

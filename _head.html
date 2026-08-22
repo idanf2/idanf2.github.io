@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Open external http(s) links in a new tab
+    // External links open in new tab
     document.querySelectorAll('a[href]').forEach(function(link) {
       var href = link.getAttribute('href');
       if (!href) return;
@@ -14,26 +14,45 @@
       }
     });
 
-    // Accordion: auto-close others, then scroll opened tab into view
-    var accordions = document.querySelectorAll('details.accordion-item');
-    accordions.forEach(function(item) {
-      item.addEventListener('toggle', function() {
-        if (this.open) {
-          // Close other open tabs
-          accordions.forEach(function(other) {
-            if (other !== item && other.open) {
-              other.open = false;
-            }
-          });
-          // Scroll this tab's summary near the top of the viewport
-          // (offset accounts for navbar height)
-          var navbar = document.querySelector('.navbar');
-          var navbarHeight = navbar ? navbar.offsetHeight : 70;
-          var offset = navbarHeight + 16;
-          var y = item.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+    // Tab navigation: click tab shows its panel; click active tab or name shows welcome
+    var tabs = document.querySelectorAll('.tab-btn');
+    var panels = document.querySelectorAll('.content-panel');
+    var siteName = document.querySelector('.site-name');
+    var activePanel = 'welcome';
+
+    function showPanel(panelName) {
+      panels.forEach(function(p) {
+        if (p.dataset.panel === panelName) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      });
+      tabs.forEach(function(t) {
+        if (t.dataset.tab === panelName) {
+          t.classList.add('active');
+        } else {
+          t.classList.remove('active');
+        }
+      });
+      activePanel = panelName;
+    }
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var tabName = tab.dataset.tab;
+        if (activePanel === tabName) {
+          showPanel('welcome');
+        } else {
+          showPanel(tabName);
         }
       });
     });
+
+    if (siteName) {
+      siteName.addEventListener('click', function() {
+        showPanel('welcome');
+      });
+    }
   });
 </script>
