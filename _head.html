@@ -1,3 +1,6 @@
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="shortcut icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="preload" as="image" href="img/headshot.jpg">
 <link rel="preload" as="image" href="img/book.jpg">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400&display=swap" crossorigin>
@@ -48,6 +51,8 @@
           t.classList.remove('active');
         }
       });
+      // Toggle body class so mobile CSS can hide the photo on non-welcome tabs
+      document.body.classList.toggle('panel-page', panelName !== 'welcome');
       activePanel = panelName;
       updatePhoto(panelName);
       window.scrollTo(0, 0);
