@@ -20,9 +20,17 @@
   --col-gap: 3rem;
   --content-side-offset: max(2rem, calc((100vw - var(--body-width)) / 2));
   --top-offset: 3rem;
+  --middle-padding: 2rem;
 }
 
 /* === Base === */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
 body {
   font-family: var(--font-main);
   color: var(--color-text);
@@ -31,9 +39,10 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative !important;
 }
 
-/* === Hide navbar entirely (no top separator line) === */
+/* === Hide navbar entirely === */
 .navbar,
 #quarto-header,
 header.navbar,
@@ -53,7 +62,26 @@ header.quarto-title-block,
   display: none !important;
 }
 
-/* === LEFT COLUMN (name + tabs) === */
+/* === Override Quarto's grid so custom positioning works === */
+#quarto-content,
+.page-columns,
+.page-rows,
+.page-layout-article,
+.column-body,
+.column-page,
+.column-page-inset,
+.column-page-inset-left,
+.column-page-inset-right {
+  display: block !important;
+  max-width: none !important;
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  grid-template-columns: none !important;
+  grid-template-rows: none !important;
+}
+
+/* === LEFT COLUMN (name + tabs, stays fixed while scrolling) === */
 .left-col {
   position: fixed;
   top: var(--top-offset);
@@ -144,13 +172,13 @@ header.quarto-title-block,
   height: 70%;
 }
 
-/* === RIGHT COLUMN (photo) === */
+/* === RIGHT COLUMN (photo, absolute — scrolls with page) === */
 .right-col {
-  position: fixed;
+  position: absolute !important;
   top: var(--top-offset);
   right: var(--content-side-offset);
   width: var(--photo-width);
-  z-index: 5;
+  z-index: 4;
 }
 
 .hero-photo {
@@ -161,15 +189,22 @@ header.quarto-title-block,
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* === MIDDLE COLUMN (content panels) === */
+/* === MIDDLE COLUMN (bordered content area) === */
 main.content,
 main#quarto-document-content {
+  box-sizing: border-box !important;
   margin-left: calc(var(--content-side-offset) + var(--left-col-width) + var(--col-gap)) !important;
   margin-right: calc(var(--content-side-offset) + var(--photo-width) + var(--col-gap)) !important;
-  max-width: 640px !important;
-  padding-top: var(--top-offset) !important;
-  padding-bottom: 3rem !important;
-  min-height: calc(100vh - 6rem);
+  max-width: 720px !important;
+  width: auto !important;
+  padding: 2rem var(--middle-padding) 3rem var(--middle-padding) !important;
+  border-left: 1px solid var(--color-border) !important;
+  border-right: 1px solid var(--color-border) !important;
+  min-height: calc(100vh - 6rem) !important;
+  margin-top: var(--top-offset) !important;
+  margin-bottom: 2rem !important;
+  position: relative !important;
+  z-index: 3 !important;
 }
 
 main.content > *:first-child,
@@ -320,5 +355,8 @@ footer.footer {
     margin-right: 0 !important;
     max-width: none !important;
     padding: 1.5rem 1.25rem 3rem 1.25rem !important;
+    border-left: none !important;
+    border-right: none !important;
+    min-height: auto !important;
   }
 }
