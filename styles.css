@@ -279,7 +279,7 @@ main#quarto-document-content > *:first-child {
   line-height: 1.65;
 }
 
-/* Welcome greeting — sober academic lead: bold roman serif, moderate size */
+/* Welcome greeting — sober academic lead: bold roman serif */
 .content-panel[data-panel="welcome"] .welcome-lead {
   font-family: var(--font-main);
   font-size: 1.5rem;
@@ -360,10 +360,11 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Separator line — visibly thicker and darker */
 .content-panel hr {
   border: none;
-  border-top: 1px solid var(--color-border);
-  margin: 1.5rem 0;
+  border-top: 2px solid var(--color-border-strong);
+  margin: 1.75rem 0;
 }
 
 .content-panel blockquote {
