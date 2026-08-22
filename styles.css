@@ -217,7 +217,7 @@ header.quarto-title-block,
   outline: none;
 }
 
-/* === RIGHT COLUMN (photo, larger, wider ellipse) === */
+/* === RIGHT COLUMN (photo, natural aspect — no zoom, no white space) === */
 .right-col {
   position: absolute !important;
   top: var(--top-offset);
@@ -228,9 +228,7 @@ header.quarto-title-block,
 .hero-photo {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 20%;
+  height: auto;
   border-radius: 50%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
@@ -402,7 +400,7 @@ footer.footer {
 
   .hero-photo {
     width: 100% !important;
-    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
   }
 
   .site-name {
