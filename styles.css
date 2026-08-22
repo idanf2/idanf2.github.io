@@ -9,7 +9,7 @@
   --color-text: #111111;
   --color-text-muted: #555555;
   --color-bg: #ffffff;
-  --color-navbar-bg: #f5f5f5;
+  --color-navbar-bg: #ffffff;
   --color-border: #e5e5e5;
   --color-border-strong: #b8b8b8;
   --color-link: #1a3a8f;
@@ -42,7 +42,6 @@ body {
   position: relative !important;
 }
 
-/* Force the navbar container to be fully centered */
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-xxl,
@@ -60,9 +59,9 @@ body {
   padding-right: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+  min-height: 2.5rem !important;
 }
 
-/* Override any auto-margins on the brand and position it as the sole centered element */
 .navbar .navbar-brand,
 .navbar > .container .navbar-brand,
 .navbar > .container-fluid .navbar-brand,
@@ -91,18 +90,6 @@ body {
   text-decoration: none !important;
 }
 
-/* Give the navbar enough height to center the brand into */
-.navbar > .container,
-.navbar > .container-fluid,
-.navbar > .container-xxl,
-.navbar > .container-xl,
-.navbar > .container-lg,
-.navbar > .container-md,
-.navbar > .container-sm {
-  min-height: 2.5rem !important;
-}
-
-/* Hide nav items, search, hamburger */
 .navbar-nav,
 .navbar-toggler,
 .navbar-collapse,
@@ -112,7 +99,6 @@ body {
   display: none !important;
 }
 
-/* Hide auto-generated title block */
 #title-block-header,
 header.quarto-title-block,
 .quarto-title-block {
@@ -230,7 +216,6 @@ details.accordion-item > summary {
   outline: none;
 }
 
-/* Remove default disclosure triangle */
 details.accordion-item > summary::-webkit-details-marker {
   display: none;
 }
@@ -240,7 +225,6 @@ details.accordion-item > summary::marker {
   content: "";
 }
 
-/* Custom chevron indicator */
 details.accordion-item > summary::after {
   content: '';
   position: absolute;
@@ -268,7 +252,6 @@ details.accordion-item > summary:focus-visible::after {
   border-color: var(--color-link);
 }
 
-/* Accordion content */
 .accordion-content {
   padding: 0.4rem 0 2rem 0;
   color: var(--color-text);
