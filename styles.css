@@ -16,7 +16,7 @@
 
   --body-width: 1280px;
   --left-col-width: 240px;
-  --photo-width: 260px;
+  --photo-width: min(340px, 28vw);
   --col-gap: 3rem;
   --content-side-offset: max(2rem, calc((100vw - var(--body-width)) / 2));
   --top-offset: 3rem;
@@ -217,7 +217,7 @@ header.quarto-title-block,
   outline: none;
 }
 
-/* === RIGHT COLUMN (photo, rounded rectangle, sized by JS to match left col) === */
+/* === RIGHT COLUMN (photo, larger, natural aspect, rounded rectangle) === */
 .right-col {
   position: absolute !important;
   top: var(--top-offset);
@@ -362,16 +362,6 @@ a:hover {
   font-style: italic;
 }
 
-/* === Book cover === */
-.book-cover {
-  display: block;
-  margin: 1.5rem auto;
-  max-width: 250px;
-  height: auto;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* === BACK-TO-TOP button === */
 .back-to-top {
   position: fixed;
@@ -434,7 +424,7 @@ footer.footer {
   }
 
   .right-col {
-    max-width: 280px !important;
+    max-width: 300px !important;
     margin: 1rem auto !important;
     padding: 0 !important;
   }
