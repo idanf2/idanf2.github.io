@@ -5,7 +5,9 @@ page-layout: article
 
 <div class="content-panel active" data-panel="welcome">
 
-Welcome! I am a Ph.D. student in the [Department of Political Science](https://pol.illinois.edu/) at the [University of Illinois Urbana-Champaign](https://illinois.edu/), specializing in public opinion and political behavior, and the coauthor of [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*](https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/), published by Bloomsbury Academic.
+<p class="welcome-lead">Welcome!</p>
+
+I am a Ph.D. student in the [Department of Political Science](https://pol.illinois.edu/) at the [University of Illinois Urbana-Champaign](https://illinois.edu/), specializing in public opinion and political behavior, and the coauthor of [*The Emerging Republican Minorities: Racial and Ethnic Realignment in the Trump Era*](https://www.bloomsbury.com/us/emerging-republican-minorities-9798765134153/), published by Bloomsbury Academic.
 
 </div>
 

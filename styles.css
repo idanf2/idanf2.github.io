@@ -217,7 +217,7 @@ header.quarto-title-block,
   outline: none;
 }
 
-/* === RIGHT COLUMN (photo, larger, natural aspect, rounded rectangle) === */
+/* === RIGHT COLUMN === */
 .right-col {
   position: absolute !important;
   top: var(--top-offset);
@@ -277,6 +277,18 @@ main#quarto-document-content > *:first-child {
 .content-panel[data-panel="welcome"] {
   font-size: 1.15rem;
   line-height: 1.65;
+}
+
+/* Welcome greeting — larger italic serif, sits above the paragraph */
+.content-panel[data-panel="welcome"] .welcome-lead {
+  font-family: var(--font-main);
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  margin: 0.25rem 0 0.9rem 0;
 }
 
 .content-panel > *:first-child {
@@ -450,6 +462,10 @@ footer.footer {
 
   .content-panel .section-title {
     font-size: 1.5rem;
+  }
+
+  .content-panel[data-panel="welcome"] .welcome-lead {
+    font-size: 2rem;
   }
 
   .back-to-top {
