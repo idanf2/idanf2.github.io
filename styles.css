@@ -678,18 +678,17 @@ footer.footer {
     width: 100% !important;
   }
 
-  /* Section title: shrink-wrap to text width so the block is a clearly-centered
-     element (like the photo), with border-bottom underlining only the text */
+  /* Section titles: left-aligned, full-width border-bottom as section divider */
   .content-panel .section-title {
-    display: table !important;
+    display: block !important;
     width: auto !important;
-    max-width: 100% !important;
+    max-width: none !important;
     font-family: var(--font-name) !important;
     font-size: 1.75rem !important;
     font-weight: 700 !important;
-    text-align: center !important;
-    margin: 0 auto 1.5rem auto !important;
-    padding: 0 0.5rem 1rem 0.5rem !important;
+    text-align: left !important;
+    margin: 0 0 1.5rem 0 !important;
+    padding: 0 0 0.75rem 0 !important;
     border-bottom: 1px solid var(--color-border) !important;
     letter-spacing: -0.02em !important;
     line-height: 1.2 !important;
