@@ -217,6 +217,38 @@ header.quarto-title-block,
   outline: none;
 }
 
+/* === SOCIAL ICONS (Google Scholar, ResearchGate, ORCID) === */
+.social-icons {
+  position: fixed;
+  top: 1.5rem;
+  right: var(--content-side-offset);
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  z-index: 10;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+  text-decoration: none !important;
+  transition: color 0.15s ease, transform 0.15s ease;
+  border-radius: 4px;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  color: var(--color-link);
+  transform: translateY(-1px);
+  text-decoration: none !important;
+  outline: none;
+}
+
 /* === RIGHT COLUMN === */
 .right-col {
   position: absolute !important;
@@ -560,6 +592,22 @@ footer.footer {
     margin: 1rem auto 0 !important;
     padding: 0.35rem 1rem !important;
     font-size: 0.8rem !important;
+  }
+
+  .social-icons {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    justify-content: center !important;
+    margin: 1rem 0 0 0 !important;
+    padding: 0 !important;
+    gap: 1rem !important;
+  }
+
+  .social-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1.3rem !important;
   }
 
   .right-col {
