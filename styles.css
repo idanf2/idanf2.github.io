@@ -565,7 +565,7 @@ footer.footer {
     font-weight: 800 !important;
     letter-spacing: -0.03em !important;
     line-height: 1.1 !important;
-    margin: 0 0 1rem 0 !important;
+    margin: 0 auto 1rem auto !important;
   }
 
   .tab-nav {
@@ -578,7 +578,7 @@ footer.footer {
     padding: 0.75rem 0 !important;
     border-top: 1px solid var(--color-border) !important;
     border-bottom: 1px solid var(--color-border) !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
   }
 
   .tab-btn {
@@ -610,7 +610,7 @@ footer.footer {
 
   .contact-btn {
     display: inline-block !important;
-    margin: 1rem auto 0 !important;
+    margin: 1rem auto 0 auto !important;
     padding: 0.35rem 1rem !important;
     font-size: 0.8rem !important;
   }
@@ -621,7 +621,7 @@ footer.footer {
     top: auto !important;
     right: auto !important;
     justify-content: center !important;
-    margin: 1rem 0 0 0 !important;
+    margin: 1rem auto 0 auto !important;
     padding: 0 !important;
     gap: 1rem !important;
     transform: none !important;
@@ -633,26 +633,35 @@ footer.footer {
     font-size: 1.3rem !important;
   }
 
+  /* Photo: explicit horizontal centering, plus bottom margin for gap before content */
   .right-col {
+    display: block !important;
     position: static !important;
-    width: auto !important;
+    width: 100% !important;
     max-width: 220px !important;
     left: auto !important;
     right: auto !important;
     top: auto !important;
-    margin: 1.75rem auto 0 auto !important;
+    margin: 1.75rem auto 1.25rem auto !important;
     padding: 0 !important;
     text-align: center !important;
   }
 
+  /* By default, hide photo on non-welcome tabs... */
   body.panel-page .right-col {
     display: none !important;
+  }
+
+  /* ...but SHOW it on book tab so the book cover appears (centered like headshot) */
+  body.panel-page.book-tab .right-col {
+    display: block !important;
   }
 
   .hero-photo {
     display: block !important;
     width: 100% !important;
     height: auto !important;
+    margin: 0 auto !important;
     border-radius: 8px !important;
     aspect-ratio: auto !important;
     object-fit: unset !important;
@@ -662,29 +671,31 @@ footer.footer {
   main.content,
   main#quarto-document-content {
     box-sizing: border-box !important;
-    margin: 1.75rem 0 0 0 !important;
+    margin: 1.75rem auto 0 auto !important;
     padding: 1rem 1.25rem 3rem 1.25rem !important;
     max-width: none !important;
     min-height: auto !important;
-    width: auto !important;
+    width: 100% !important;
   }
 
+  /* Section titles horizontally centered like the photo above them */
   .content-panel .section-title {
     font-family: var(--font-name) !important;
     font-size: 1.75rem !important;
     font-weight: 700 !important;
     text-align: center !important;
-    margin: 0 0 1.5rem 0 !important;
+    margin: 0 auto 1.5rem auto !important;
     padding: 0 0 1rem 0 !important;
     border-bottom: 1px solid var(--color-border) !important;
     letter-spacing: -0.02em !important;
     line-height: 1.2 !important;
+    width: 100% !important;
   }
 
   .content-panel[data-panel="welcome"] .welcome-lead {
     font-size: 1.4rem !important;
     text-align: center !important;
-    margin: 0 0 0.75rem 0 !important;
+    margin: 0 auto 0.75rem auto !important;
   }
 
   .back-to-top {

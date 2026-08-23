@@ -53,6 +53,7 @@
         }
       });
       document.body.classList.toggle('panel-page', panelName !== 'welcome');
+      document.body.classList.toggle('book-tab', panelName === 'book');
       activePanel = panelName;
       updatePhoto(panelName);
       window.scrollTo(0, 0);
