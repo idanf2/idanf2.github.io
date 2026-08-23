@@ -313,6 +313,72 @@ main#quarto-document-content > *:first-child {
   line-height: 1.2;
 }
 
+/* === PRESENTATION NOTE (working papers) === */
+.presentation-note {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0.5rem 0 0.75rem 0 !important;
+  line-height: 1.5;
+}
+
+/* === ABSTRACT TOGGLE (details/summary) === */
+.abstract-toggle {
+  margin: 0.75rem 0 !important;
+  padding: 0;
+}
+
+.abstract-toggle summary {
+  cursor: pointer;
+  font-family: var(--font-name);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-link);
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  background: transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+.abstract-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+.abstract-toggle summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+.abstract-toggle[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.abstract-toggle summary:hover,
+.abstract-toggle summary:focus-visible {
+  color: var(--color-link);
+  border-color: var(--color-link);
+  background: rgba(26, 58, 143, 0.04);
+  outline: none;
+}
+
+.abstract-toggle > p {
+  margin-top: 0.9rem !important;
+}
+
+.abstract-toggle > p:last-child {
+  margin-bottom: 0 !important;
+}
+
 /* === Typography === */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
@@ -426,7 +492,6 @@ footer.footer {
 /* === MOBILE (≤ 900px viewport width) — matches OLD design === */
 /* ============================================================ */
 @media (max-width: 900px) {
-  /* Reset ALL desktop positioning */
   .left-col {
     position: static !important;
     width: auto !important;
@@ -439,7 +504,6 @@ footer.footer {
     text-align: center !important;
   }
 
-  /* Site name: masthead */
   .site-name {
     display: block !important;
     text-align: center !important;
@@ -451,7 +515,6 @@ footer.footer {
     margin: 0 0 1rem 0 !important;
   }
 
-  /* Tab nav: horizontal top menu (mirrors old navbar) */
   .tab-nav {
     display: flex !important;
     flex-direction: row !important;
@@ -492,7 +555,6 @@ footer.footer {
     border-bottom: 2px solid var(--color-link) !important;
   }
 
-  /* Contact button: small pill below nav */
   .contact-btn {
     display: inline-block !important;
     margin: 1rem auto 0 !important;
@@ -500,7 +562,6 @@ footer.footer {
     font-size: 0.8rem !important;
   }
 
-  /* Right col (photo): visible only on welcome, rounded rectangle */
   .right-col {
     position: static !important;
     width: auto !important;
@@ -527,7 +588,6 @@ footer.footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   }
 
-  /* Content area: full width */
   main.content,
   main#quarto-document-content {
     box-sizing: border-box !important;
@@ -538,7 +598,6 @@ footer.footer {
     width: auto !important;
   }
 
-  /* Section title: page-title style (like the old mobile page titles) */
   .content-panel .section-title {
     font-family: var(--font-name) !important;
     font-size: 1.75rem !important;
@@ -551,14 +610,12 @@ footer.footer {
     line-height: 1.2 !important;
   }
 
-  /* Welcome lead */
   .content-panel[data-panel="welcome"] .welcome-lead {
     font-size: 1.4rem !important;
     text-align: center !important;
     margin: 0 0 0.75rem 0 !important;
   }
 
-  /* Back to top: smaller position on mobile */
   .back-to-top {
     bottom: 1.25rem !important;
     right: 1.25rem !important;
