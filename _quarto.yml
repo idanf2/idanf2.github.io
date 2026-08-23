@@ -1,20 +1,19 @@
 project:
   type: website
   output-dir: _site
-
+  resources:
+    - "google*.html"
 website:
-  title: "Idan Franco"
+  title: "Idan Franco — PhD Candidate, Political Science, UIUC"
   description: "PhD Candidate in Political Science, University of Illinois Urbana-Champaign"
   site-url: "https://www.idanfranco.com"
   favicon: img/favicon.png
   open-graph: true
   twitter-card: true
-
   navbar:
     pinned: true
     background: light
     foreground: black
-
 format:
   html:
     theme: cosmo
