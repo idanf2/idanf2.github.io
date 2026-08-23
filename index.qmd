@@ -81,7 +81,7 @@ We analyze detailed regression models and conduct robust empirical tests to demo
 
 <div class="content-panel" data-panel="working-papers">
 
-<h2 class="section-title">Working Papers</h2>
+<h2 class="section-title">Selected Working Papers</h2>
 
 **Whitewashing "White Men Politics": How Racial and Ethnic Identity Mainstreams the Radical-Right**
 
