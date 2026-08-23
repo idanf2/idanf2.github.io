@@ -218,8 +218,8 @@ header.quarto-title-block,
 }
 
 /* === SOCIAL ICONS (Google Scholar, ResearchGate, ORCID) === */
-/* Fixed at top-right of viewport (same position as originally) */
-/* JS adds .scrolled-past class when user scrolls past threshold → fade out */
+/* Fixed at top-right of viewport (same visual position as before) */
+/* JS translates them up on scroll → they scroll off with content, like the photo */
 .social-icons {
   position: fixed;
   top: 1.5rem;
@@ -228,14 +228,7 @@ header.quarto-title-block,
   gap: 0.75rem;
   align-items: center;
   z-index: 10;
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-}
-
-.social-icons.scrolled-past {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-  pointer-events: none;
+  will-change: transform;
 }
 
 .social-icon {
@@ -247,14 +240,13 @@ header.quarto-title-block,
   color: var(--color-text-muted);
   font-size: 1.2rem;
   text-decoration: none !important;
-  transition: color 0.15s ease, transform 0.15s ease;
+  transition: color 0.15s ease;
   border-radius: 4px;
 }
 
 .social-icon:hover,
 .social-icon:focus-visible {
   color: var(--color-link);
-  transform: translateY(-1px);
   text-decoration: none !important;
   outline: none;
 }
@@ -356,16 +348,16 @@ main#quarto-document-content > *:first-child {
 }
 
 /* === HIGHLIGHT NOTE (recognitions, awards) === */
+/* Serif font so curly apostrophes render with clearly visible curl */
 .highlight-note {
-  font-family: var(--font-name);
-  font-size: 0.95rem;
+  font-family: var(--font-main);
+  font-size: 1rem;
   font-weight: 500;
   color: var(--color-text);
-  line-height: 1.55;
-  letter-spacing: 0.005em;
+  line-height: 1.5;
   border-left: 3px solid var(--color-link);
   background: rgba(26, 58, 143, 0.04);
-  padding: 0.55rem 0.85rem !important;
+  padding: 0.6rem 0.9rem !important;
   margin: 0.75rem 0 !important;
   border-radius: 0 4px 4px 0;
 }
@@ -623,7 +615,7 @@ footer.footer {
     font-size: 0.8rem !important;
   }
 
-  /* Mobile: icons in flow, always visible (no hide-on-scroll) */
+  /* Mobile: icons in flow, no transform (JS respects this) */
   .social-icons {
     position: static !important;
     top: auto !important;
@@ -632,10 +624,7 @@ footer.footer {
     margin: 1rem 0 0 0 !important;
     padding: 0 !important;
     gap: 1rem !important;
-    opacity: 1 !important;
-    visibility: visible !important;
     transform: none !important;
-    pointer-events: auto !important;
   }
 
   .social-icon {

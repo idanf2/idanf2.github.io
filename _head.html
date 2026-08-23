@@ -96,27 +96,24 @@
       });
     }
 
-    // Hide social icons when scrolling down (desktop only)
+    // Social icons: keep at fixed top-right visually, but translate up on scroll
+    // so they behave like the photo (scroll off with page content instead of following viewport)
     var socialIcons = document.querySelector('.social-icons');
-    var socialHideThreshold = 60;
 
-    function toggleSocialIcons() {
-      // Only apply hide-on-scroll behavior on desktop (>900px)
+    function updateSocialIconsTransform() {
+      if (!socialIcons) return;
+      // On mobile (<=900px), icons are in normal flow; no transform needed
       if (window.innerWidth <= 900) {
-        socialIcons.classList.remove('scrolled-past');
+        socialIcons.style.transform = '';
         return;
       }
-      if (window.scrollY > socialHideThreshold) {
-        socialIcons.classList.add('scrolled-past');
-      } else {
-        socialIcons.classList.remove('scrolled-past');
-      }
+      socialIcons.style.transform = 'translateY(' + (-window.scrollY) + 'px)';
     }
 
     if (socialIcons) {
-      window.addEventListener('scroll', toggleSocialIcons, { passive: true });
-      window.addEventListener('resize', toggleSocialIcons);
-      toggleSocialIcons();
+      window.addEventListener('scroll', updateSocialIconsTransform, { passive: true });
+      window.addEventListener('resize', updateSocialIconsTransform);
+      updateSocialIconsTransform();
     }
   });
 </script>
