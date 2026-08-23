@@ -345,6 +345,25 @@ main#quarto-document-content > *:first-child {
   line-height: 1.2;
 }
 
+/* === HIGHLIGHT NOTE (recognitions, awards) === */
+.highlight-note {
+  font-family: var(--font-name);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+  border-left: 3px solid var(--color-link);
+  background: rgba(26, 58, 143, 0.04);
+  padding: 0.55rem 0.85rem !important;
+  margin: 0.75rem 0 !important;
+  border-radius: 0 4px 4px 0;
+}
+
+.highlight-note a {
+  color: var(--color-link);
+}
+
 /* === PRESENTATION NOTE (working papers) === */
 .presentation-note {
   font-size: 0.95rem;
