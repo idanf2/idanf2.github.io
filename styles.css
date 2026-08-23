@@ -218,8 +218,9 @@ header.quarto-title-block,
 }
 
 /* === SOCIAL ICONS (Google Scholar, ResearchGate, ORCID) === */
+/* Absolute positioning: anchored to body, scrolls up with page */
 .social-icons {
-  position: fixed;
+  position: absolute !important;
   top: 1.5rem;
   right: var(--content-side-offset);
   display: flex;
@@ -619,7 +620,7 @@ footer.footer {
     right: auto !important;
     justify-content: center !important;
     margin: 1rem 0 0 0 !important;
-    padding: 0 !important;
+    padding: 0 1.25rem !important;
     gap: 1rem !important;
   }
 
