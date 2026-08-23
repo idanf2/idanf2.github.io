@@ -218,15 +218,24 @@ header.quarto-title-block,
 }
 
 /* === SOCIAL ICONS (Google Scholar, ResearchGate, ORCID) === */
-/* Absolute positioning: anchored to body, scrolls up with page */
+/* Fixed at top-right of viewport (same position as originally) */
+/* JS adds .scrolled-past class when user scrolls past threshold → fade out */
 .social-icons {
-  position: absolute !important;
+  position: fixed;
   top: 1.5rem;
   right: var(--content-side-offset);
   display: flex;
   gap: 0.75rem;
   align-items: center;
   z-index: 10;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.social-icons.scrolled-past {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  pointer-events: none;
 }
 
 .social-icon {
@@ -614,14 +623,19 @@ footer.footer {
     font-size: 0.8rem !important;
   }
 
+  /* Mobile: icons in flow, always visible (no hide-on-scroll) */
   .social-icons {
     position: static !important;
     top: auto !important;
     right: auto !important;
     justify-content: center !important;
     margin: 1rem 0 0 0 !important;
-    padding: 0 1.25rem !important;
+    padding: 0 !important;
     gap: 1rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
   }
 
   .social-icon {

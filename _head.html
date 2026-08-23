@@ -95,5 +95,28 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    // Hide social icons when scrolling down (desktop only)
+    var socialIcons = document.querySelector('.social-icons');
+    var socialHideThreshold = 60;
+
+    function toggleSocialIcons() {
+      // Only apply hide-on-scroll behavior on desktop (>900px)
+      if (window.innerWidth <= 900) {
+        socialIcons.classList.remove('scrolled-past');
+        return;
+      }
+      if (window.scrollY > socialHideThreshold) {
+        socialIcons.classList.add('scrolled-past');
+      } else {
+        socialIcons.classList.remove('scrolled-past');
+      }
+    }
+
+    if (socialIcons) {
+      window.addEventListener('scroll', toggleSocialIcons, { passive: true });
+      window.addEventListener('resize', toggleSocialIcons);
+      toggleSocialIcons();
+    }
   });
 </script>
