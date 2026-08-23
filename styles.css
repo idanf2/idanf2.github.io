@@ -678,18 +678,21 @@ footer.footer {
     width: 100% !important;
   }
 
-  /* Section titles horizontally centered like the photo above them */
+  /* Section title: shrink-wrap to text width so the block is a clearly-centered
+     element (like the photo), with border-bottom underlining only the text */
   .content-panel .section-title {
+    display: table !important;
+    width: auto !important;
+    max-width: 100% !important;
     font-family: var(--font-name) !important;
     font-size: 1.75rem !important;
     font-weight: 700 !important;
     text-align: center !important;
     margin: 0 auto 1.5rem auto !important;
-    padding: 0 0 1rem 0 !important;
+    padding: 0 0.5rem 1rem 0.5rem !important;
     border-bottom: 1px solid var(--color-border) !important;
     letter-spacing: -0.02em !important;
     line-height: 1.2 !important;
-    width: 100% !important;
   }
 
   .content-panel[data-panel="welcome"] .welcome-lead {
