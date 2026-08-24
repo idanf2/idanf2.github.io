@@ -5,7 +5,7 @@ project:
     - "google*.html"
 website:
   title: "Idan Franco"
-  description: "PhD Candidate in Political Science, University of Illinois Urbana-Champaign"
+  description: "Idan Franco, PhD Student in Political Science at UIUC"
   site-url: "https://www.idanfranco.com"
   favicon: img/favicon.png
   open-graph: true
